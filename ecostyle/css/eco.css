@@ -1,0 +1,302 @@
+:root {
+    --primary-color: #D6CCC3;
+    --secondary-color: #7D6E83;
+    --white-color: #fdfdfd;
+    --black-color: #000000;
+}
+
+:root {
+
+  /* @link https://utopia.fyi/type/calculator?c=320,8,1.125,1200,15,1.333,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --step-0: clamp(1.06rem, calc(0.93rem + 0.68vw), 1.44rem);
+  --step-1: clamp(1.20rem, calc(0.93rem + 1.31vw), 1.92rem);
+  --step-2: clamp(1.35rem, calc(0.91rem + 2.20vw), 2.55rem);
+  --step-3: clamp(1.51rem, calc(0.83rem + 3.44vw), 3.41rem);
+  --step-4: clamp(1.70rem, calc(0.67rem + 5.16vw), 4.54rem);
+
+}
+
+
+@media screen and (min-width:766px) {
+  :root {
+
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1200,50,1.333,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+      --step-0: clamp(0.63rem, calc(0.40rem + 1.14vw), 1.25rem);
+      --step-1: clamp(0.70rem, calc(0.35rem + 1.75vw), 1.67rem);
+      --step-2: clamp(0.79rem, calc(0.27rem + 2.60vw), 2.22rem);
+      --step-3: clamp(0.89rem, calc(0.14rem + 3.76vw), 2.96rem);
+      --step-4: clamp(1.00rem, calc(-0.07rem + 5.36vw), 3.95rem);
+      --step-5: clamp(1.13rem, calc(-0.38rem + 7.52vw), 5.26rem);
+
+  }  
+
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: var(--step-0);
+    background-color: var(--white-color);
+}
+
+h2 {
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--step-3);
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--step-3);
+    color: var(--black-color);}
+
+h4 {
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--step-3);
+    color: var(--white-color);
+    position: relative;
+    top: -30px;
+}
+
+h5 {
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--step-2);
+    color: var(--black-color);
+    text-align: end;
+    margin-top: 1.5rem;
+}
+ 
+h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: var(--step-1);
+    color: var(--black-color);
+}
+
+article {
+    margin-bottom: 3rem;
+}
+
+
+
+/* ------------------------------------------------------------- */
+/* Navigation */
+
+@media (max-width: 992px) {
+  .navbar-toggler[aria-expanded="true"] ~ .navbar-brand,
+  .navbar-toggler[aria-expanded="true"] ~ .form-inline{
+    display: none;
+  }
+}
+
+nav {
+    background-color: var(--white-color);
+    font-family: 'Bad Script', sans-serif;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar-toggler {
+  color: var(--white-color);
+}
+
+#logo {
+  height: 50px;
+}
+
+.globe {
+    margin: 0 1rem 0 1rem;
+}
+
+.search {
+    border-radius: 50px;
+    border: 1px solid var(--black-color);
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+}
+
+@media (max-width: 750px) {
+    nav input {
+        display: none;
+    }
+}
+
+  /* ------------------------------------------------------------- */
+  /* Header */
+
+  .description {
+      padding: 2rem;
+      background-color: var(--primary-color);
+  }
+
+  .description-purple {
+      background-color: var(--secondary-color);
+      padding: 2rem;
+      color: var(--white-color);
+  }
+
+  .description-purple h6 {
+      color: var(--white-color);
+  }
+
+  .logo {
+    max-width: 15rem;
+  }
+
+  .headline {
+      margin-top: 6rem;
+  }
+
+
+/* ------------------------------------------------------------- */
+/* Artikel Products */
+
+#products {
+    background-color: var(--secondary-color);
+    padding: 3rem 3rem 1rem 3rem;
+}
+
+.btn_allproducts {
+    color: var(--secondary-color);
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--step-0);
+    border: 1px solid var(--secondary-color);
+    border-radius: 50px;
+    padding: 1rem 2rem 0.5rem 2rem;
+}
+
+.btn_allproducts a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.btn_allproducts:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn_allproducts a:hover {
+    color: var(--white-color);
+}
+
+/* ------------------------------------------------------------- */
+/* Artikel Newsletter */
+
+#newsletter {
+    margin-bottom: 0;
+}
+
+.newsletter {
+    background-color: var(--primary-color);
+    padding: 3rem;
+}
+
+.email {
+  background-color: var(--primary-color);
+  color: var(--black-color);
+  border-radius: 50px;
+  border: 1px solid var(--black-color);
+  padding-left: 1rem;
+  padding-top: 0.4rem;
+  width: 40rem;
+}
+
+/* ------------------------------------------------------------- */
+/* Artikel Partner */
+
+#schneiderei-mueller {
+    background-color: var(--primary-color);
+    padding: 3rem 0 0 5rem;
+}
+
+#stoffatelier-alpenwebe {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding-top: 3rem;
+}
+
+#stoffatelier-alpenwebe h6 {
+    color: var(--white-color);
+}
+
+/* ------------------------------------------------------------- */
+/* Footer */
+
+footer {
+    padding: 1.5rem;
+}
+
+footer ul {
+    margin-bottom: 0;
+}
+
+footer li a {
+    text-decoration: none;
+    color: var(--black-color);
+    font-family: 'Bad Script', sans-serif;
+}
+
+/* ------------------------------------------------------------- */
+/* Formular */
+
+.btn_form {
+    color: var(--black-color);
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--step-0);
+    border: 1px solid var(--black-color);
+    border-radius: 50px;
+    padding: 0.5rem 2rem 0.2rem 2rem;
+}
+
+.btn_form a {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.btn_form:hover {
+    background-color: var(--white-color);
+}
+
+input {
+    font-family: 'Oswald', sans-serif;
+    color: var(--black-color);
+    font-weight: 300;
+    border: none;
+}
+
+::placeholder { 
+    font-family: 'Oswald', sans-serif;
+}
+
+textarea {
+    font-family: 'Oswald', sans-serif;
+    color: var(--black-color);
+    font-weight: 300;
+    border: none;
+    border: none;
+}
+
+/* ------------------------------------------------------------- */
+/* Shop */
+
+.btn_shop {
+    background-color: var(--primary-color);
+    color: var(--black-color);
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--step-0);
+    border: 1px solid var(--black-color);
+    border-radius: 50px;
+    padding: 0.5rem 2rem 0.2rem 2rem;
+}
+
+.btn_shop a {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.btn_shop:hover {
+    background-color: var(--white-color);
+}
