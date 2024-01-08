@@ -21,11 +21,14 @@ function mengeAendern(index) {
 }
 
 function berechneSumme() {
-    summe = 0.00;
+    let anzahlArtikel = document.querySelector('#anzahlArtikel').value;
+    let gesamtSumme = 0;
 
     for (let i = 0; i < anzahlArtikel; i++) {
-        summe += parseFloat(document.querySelector('#artikelsumme_' + index).innerHTML);
+        let artikelSumme = parseFloat(document.querySelector('#artikelsumme_' + i).innerHTML);
+        gesamtSumme += artikelSumme;
     }
-    document.querySelector('#gesamtsumme').innerHTML = summe.toFixed(2);
-}
 
+    let gesamtsummeElement = document.querySelector('#gesamtsumme');
+    gesamtsummeElement.textContent = gesamtSumme.toFixed(2);
+}

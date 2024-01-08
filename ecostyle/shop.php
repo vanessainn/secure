@@ -85,7 +85,7 @@
     <?php include 'footer.php'; ?>
 
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/ecostyle.js"></script>
+    <script src="js/shop.js"></script>
 
 </body>
 
