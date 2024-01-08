@@ -29,6 +29,22 @@ function berechneSumme() {
         gesamtSumme += artikelSumme;
     }
 
+    let mwst = gesamtSumme * 0.2;
+
     let gesamtsummeElement = document.querySelector('#gesamtsumme');
     gesamtsummeElement.textContent = gesamtSumme.toFixed(2);
+
+    let mwstElement = document.querySelector('#mwst');
+    mwstElement.textContent = mwst.toFixed(2);
+
+    let versandkostenElement = document.querySelector('#versandkosten');
+    if (gesamtSumme > 100) {
+        versandkostenElement.textContent = '5.90'; 
+    } else {
+        versandkostenElement.textContent = '0.00'; 
+    }
+
+    let gesamtbetrag = gesamtSumme + parseFloat(versandkostenElement.textContent);
+    let gesamtbetragElement = document.querySelector('#gesamtbetrag');
+    gesamtbetragElement.textContent = gesamtbetrag.toFixed(2);
 }
