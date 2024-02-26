@@ -34,11 +34,13 @@ function berechneSumme() {
     let gesamtsummeElement = document.querySelector('#gesamtsumme');
     gesamtsummeElement.textContent = gesamtSumme.toFixed(2);
 
+
+
     let mwstElement = document.querySelector('#mwst');
     mwstElement.textContent = mwst.toFixed(2);
 
     let versandkostenElement = document.querySelector('#versandkosten');
-    if (gesamtSumme > 100) {
+    if (gesamtSumme < 100) {
         versandkostenElement.textContent = '5.90'; 
     } else {
         versandkostenElement.textContent = '0.00'; 
@@ -46,5 +48,6 @@ function berechneSumme() {
 
     let gesamtbetrag = gesamtSumme + parseFloat(versandkostenElement.textContent);
     let gesamtbetragElement = document.querySelector('#gesamtbetrag');
-    gesamtbetragElement.textContent = gesamtbetrag.toFixed(2);
+    gesamtbetragElement.textContent = gesamtbetrag.toFixed(2);   
+    document.querySelector('#gesamtsumme_x').value = gesamtbetrag.toFixed(2);
 }
