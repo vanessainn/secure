@@ -56,10 +56,11 @@
             $mail->Username = 'wiastud-newsletter';
             $mail->Password = '45YerkaidaAsaef5Kiap';
             $mail->From = 'stud-newsletter@wda-innsbruck.at';
-            $mail->FromName = 'EcoStyle Goller';
+            $mail->FromName = 'Bestellbestätigung - EcoStyle Goller';
             $mail->addAddress('vanessa.innerbichler@gmail.com', "Vanessa Innerbichler");
+            $mail->addCC('info@ecostyle.com', "Maria Goller");
             $mail->isHTML(true);
-            $mail->Subject = 'Bestellbestätigung EcoStyle Goller';
+            $mail->Subject = 'Bestellbestätigung - EcoStyle Goller';
             $mail->Body = '<h1 style="color:#7D6E83; padding: 5px;">Vielen Dank für Ihre Bestellung!</h1>' 
             .'<br>' . '<p>Hier sind alle Informationen zu Ihrer Bestellung nochmals zusammengefasst:</p>' . '<br>' . $name . '<br>' . $adresse . '<br>' . $ort . '<br>' . $plz . '<br>' . $land 
             . '<br>' . $telefonnummer . '<br>' . $email . '<br>' . '<p>Der DSGVO wurde zugestimmt!</p>'
