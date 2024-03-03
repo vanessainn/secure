@@ -6,29 +6,9 @@
     require 'src/PHPMailer/PHPMailer.php';
     require 'src/PHPMailer/SMTP.php';
 
-    $artikel = ["Recycelte Denim-Jeans", "Bio-Woll-Beanie", "Fair Trade Baumwollkleid", "Recycelte Brillenfassung", "Upcycled Lederhandtasche", "Goldene Ohrringe", "Bio-Leinenhemd", "Handgewebter Wollschal", "Bio-Baumwoll-T-Shirt", "Bambus-Socken"];
-    $beschreibung = ["Stilvoll, umweltbewusst, zeitlos", "Warm, bio-zertifiziert, zeitlos", "Ethik, Stil, zeitlos", "Nachhaltig stilvoll aus recyceltem Holz", "Stilvoll, einzigartig, aus recyceltem Leder", "Handgefertigt, recyceltes Gold, zeitlose Eleganz", "Leicht, atmungsaktiv, ökologisch", "Einzigartiges Muster, kuschelig warm", "Weich, atmungsaktiv, umweltfreundlich", "Atmungsaktiv, nachhaltig, bequem"];
-    $preis = [49.99, 19.99, 59.99, 139.99, 159.99, 29.99, 59.99, 19.99, 29.99, 18.99];
-
-
-    if (isset($_POST['submit'])) {
-        $bestellartikel = ''; 
-
-        foreach ($_POST['artikelanzahl'] as $index => $anzahl) {
-            if ($anzahl > 0) {
-                $artikelName = $artikel[$index]; 
-                $artikelBeschreibung = $beschreibung[$index];
-                $artikelPreis = $preis[$index];
-                $bestellartikel = 'Artikel: ' . $artikelName . '<br>' . 'Artikelbeschreibung: ' . '<br>' . 'Stück: ' . $anzahl . '<br>' . 'Einzelpreis: ' . number_format($artikelPreis, 2, ',', '.') . ' €<br><br>';
-            }
-        }
-
-        $gesamtsumme = $_POST['gesamtsumme'];
-        $versandkosten = htmlspecialchars($_POST['versandkosten']);
-        $gesamtbetrag = $_POST['gesamtbetrag'];
-    }
 ?>
 
+<?php include 'artikel.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +22,7 @@
     <?php
         extract($_POST);
         $name = $vorname . ' ' . $nachname;
+        $bestellartikel = '';
 
         if (isset($_POST['submit'])) {
 
@@ -66,12 +47,14 @@
             . '<br>' . $telefonnummer . '<br>' . $email . '<br>' . '<p>Der DSGVO wurde zugestimmt!</p>'
             . '<br><br>' 
             . '<h2 style="color=#D6CCC3">Bestelldaten</h2>'
-            . '<br>Ihre Produkte: ' . $bestellartikel . '<br>Summe: ' . $gesamtsumme . '<br>Versandkosten: ' . $versandkosten . '<br>Rechnungsbetrag: ' . $gesamtbetrag; 
-            
-            
-            
-            
+            . '<br>Ihre Produkte: ' . $bestellartikel . '<br>Summe: ' . $gesamtsumme_x . ' Euro' . '<br>Versandkosten: ' . $versandkosten_x . ' Euro' . '<br>Rechnungsbetrag: ' . $gesamtbetrag_x . ' Euro'; 
             ;
+
+            for ($i = 0; $i < count($artikel); $i++) {
+                if ($i < $artikelanzahl_ . $i) {
+                    $bestellartikel = $artikelanzahl_ . $i . ' ' . $artikelname_x . ' zum Einzelpreis von ' . $artikelpreis_x . '<br>';
+                }
+            }
 
             try {
                 $mail->send();

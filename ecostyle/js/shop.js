@@ -2,6 +2,7 @@
 
 let anzahlArtikel = document.querySelector('#anzahlArtikel').value;
 
+
 for (let i = 0; i < anzahlArtikel; i++) {
     addEventHandler(i);
 }
@@ -18,6 +19,8 @@ function mengeAendern(index) {
     let ergebnis = preis * document.querySelector('#artikelanzahl_' + index).value; 
     document.querySelector('#artikelsumme_' + index).innerHTML = ergebnis.toFixed(2);
     berechneSumme ();
+    document.querySelector('#artikelpreis_x').value = preis;
+    document.querySelector('#artikelsumme_x').value = ergebnis;
 }
 
 function berechneSumme() {
@@ -33,7 +36,7 @@ function berechneSumme() {
 
     let gesamtsummeElement = document.querySelector('#gesamtsumme');
     gesamtsummeElement.textContent = gesamtSumme.toFixed(2);
-
+    document.querySelector('#gesamtsumme_x').value = gesamtSumme;
 
 
     let mwstElement = document.querySelector('#mwst');
@@ -45,9 +48,14 @@ function berechneSumme() {
     } else {
         versandkostenElement.textContent = '0.00'; 
     }
+    document.querySelector('#versandkosten_x').value = versandkostenElement;
 
     let gesamtbetrag = gesamtSumme + parseFloat(versandkostenElement.textContent);
     let gesamtbetragElement = document.querySelector('#gesamtbetrag');
     gesamtbetragElement.textContent = gesamtbetrag.toFixed(2);   
-    document.querySelector('#gesamtsumme_x').value = gesamtbetrag.toFixed(2);
+    document.querySelector('#gesamtbetrag_x').value = gesamtbetrag;
+
 }
+
+let artikelName = document.querySelector('#artikelname');
+document.querySelector('#artikelname_x').value  = artikelName;
