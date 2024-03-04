@@ -48,7 +48,7 @@ function berechneSumme() {
     } else {
         versandkostenElement.textContent = '0.00'; 
     }
-    document.querySelector('#versandkosten_x').value = versandkostenElement;
+    document.querySelector('#versandkosten_x').value = versandkostenElement.textContent;
 
     let gesamtbetrag = gesamtSumme + parseFloat(versandkostenElement.textContent);
     let gesamtbetragElement = document.querySelector('#gesamtbetrag');
